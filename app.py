@@ -1,4 +1,5 @@
-from flask import Flask, render_template, url_for
+from flask import (Flask, render_template, 
+    url_for, request)
 
 
 app = Flask(__name__)
@@ -8,8 +9,9 @@ def index():
     return render_template('index.html')
 
 
-@app.route('/add-pet')
+@app.route('/add-pet', methods=['GET', 'POST'])
 def add_pet():
+    print(request.form)
     return render_template('addpet.html')
 
 

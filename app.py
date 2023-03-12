@@ -1,20 +1,21 @@
-from flask import Flask
+from flask import Flask, render_template
 
 
 app = Flask(__name__)
 
-
-#decorator
 @app.route('/')
 def index():
-    return 'Hello from Pet Adoption'
+    return render_template('index.html')
 
 
-@app.route('/adopt_puppy')
-def puppy():
-    return 'Do you want to take me home with you?'
+@app.route('/add-pet')
+def add_pet():
+    return render_template('addpet.html')
 
 
+@app.route('/pet')
+def pet():
+    return render_template('pet.html')
 
 if __name__ == '__main__':
-    app.run(debug=True, port=8000, host='127.0.0.1')
+    app.run(debug=True, port=8000, host='0.0.0.0')

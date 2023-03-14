@@ -1,8 +1,6 @@
-from flask import (Flask, render_template, 
+from flask import (render_template, 
     url_for, request)
-
-
-app = Flask(__name__)
+from models import db, Pet, app 
 
 @app.route('/')
 def index():
@@ -22,4 +20,5 @@ def pet():
 
 
 if __name__ == '__main__':
-    app.run(debug=True, port=8000, host='0.0.0.0')
+    db.create_all()
+    app.run(debug=True, port=8000, host='127.0.0.1')

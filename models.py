@@ -26,7 +26,8 @@ class Pet(db.Model):
     description = db.Column('Description', db.Text)
 
     def __repr__(self):
-        return f'''<Pet (Name: {self.name})
+        return f'''<Pet 
+                Name: {self.name}
                 Age: {self.age}
                 Breed: {self.breed}
                 Color: {self.color}
@@ -37,4 +38,4 @@ class Pet(db.Model):
                 Gender: {self.gender}
                 Spay: {self.spay}
                 House Trained: {self.house_trained}
-                Descrption: {self.description})'''
+                Descrption: {self.description}'''
